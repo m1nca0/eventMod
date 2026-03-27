@@ -1,0 +1,17 @@
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\bin\Debug\net10.0-windows\EventMod.exe
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\bin\Debug\net10.0-windows\EventMod.deps.json
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\bin\Debug\net10.0-windows\EventMod.runtimeconfig.json
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\bin\Debug\net10.0-windows\EventMod.dll
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\bin\Debug\net10.0-windows\EventMod.pdb
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.Form1.resources
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.csproj.GenerateResource.cache
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.AssemblyInfoInputs.cache
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.AssemblyInfo.cs
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.csproj.CoreCompileInputs.cache
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.sourcelink.json
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.dll
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\refint\EventMod.dll
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.pdb
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\EventMod.genruntimeconfig.cache
+C:\Users\vasilyevmi\Desktop\ВУЗ\tech\EventMod\EventMod\obj\Debug\net10.0-windows\ref\EventMod.dll
