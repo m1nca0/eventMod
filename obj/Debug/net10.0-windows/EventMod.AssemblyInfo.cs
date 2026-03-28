@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventMod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd94fd7d1e3ec571831c9a9c44ff40428952a562")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ba3519b3d0e2c6d8958549e3c23b9e033eaaacf")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventMod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventMod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
