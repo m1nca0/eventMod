@@ -5,6 +5,7 @@ namespace EventMod
     public partial class Form1 : Form
     {
         MyRectangle myRect;
+        List<BaseObject> objects = new();
         public Form1()
         {
             InitializeComponent();
@@ -16,6 +17,8 @@ namespace EventMod
             var g = e.Graphics;
 
             g.Clear(Color.White);
+
+            g.Transform = myRect.GetTransform();
 
             myRect.Render(g);
         }

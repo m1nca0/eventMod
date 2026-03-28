@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Text;
 
 namespace EventMod.Objects
@@ -16,7 +17,14 @@ namespace EventMod.Objects
             this.Y = y;
             this.Angle = angle;
         }
+        public Matrix GetTransform()
+        {
+            var matrix = new Matrix(); 
+            matrix.Translate(X,Y);
+            matrix.Rotate(Angle);
 
+            return matrix;
+        }
         public virtual void Render(Graphics g)
         {
 
