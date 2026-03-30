@@ -26,8 +26,7 @@ namespace EventMod
 
             objects.Add(marker);
             objects.Add(player);
-            objects.Add(new MyRectangle(50, 50, 0));
-            objects.Add(new MyRectangle(100, 100, 45));
+            objects.Add(new MyEllipse(50, 50, 0));
         }
 
         private void pbMain_Paint(object sender, PaintEventArgs e)
