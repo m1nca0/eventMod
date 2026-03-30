@@ -17,7 +17,11 @@ namespace EventMod
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
             };
-
+            player.OnMarkerOverlap += (m) =>
+            {
+                objects.Remove(m);
+                marker = null;
+            };
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
 
             objects.Add(marker);
@@ -32,24 +36,28 @@ namespace EventMod
 
             g.Clear(Color.White);
 
+            updatePlaer();
             foreach (var obj in objects.ToList())
             {
                 if (obj != player && player.Overlaps(obj, g))
                 {
-                    player.Overlap(obj); 
+                    player.Overlap(obj);
                     obj.Overlap(player);
-                    if (obj == marker)
-                    {
-                        objects.Remove(marker);
-                        marker = null; 
-                    }
                 }
+            }
+     
+            foreach (var obj in objects)
+            {
                 g.Transform = obj.GetTransform();
                 obj.Render(g);
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            pbMain.Invalidate();
+        }
+        private void updatePlaer()
         {
             if (marker != null)
             {
@@ -60,10 +68,16 @@ namespace EventMod
                 dx /= lenght;
                 dy /= lenght;
 
-                player.X += dx * 2;
-                player.Y += dy * 2;
+                player.vX += dx * 0.5f;
+                player.vY += dy * 0.5f;
+
+                player.Angle = 90 - MathF.Atan2(player.vX, player.vY) * 180 / MathF.PI;
             }
-            pbMain.Invalidate();
+            player.vX += -player.vX * 0.1f;
+            player.vY += -player.vY * 0.1f;
+
+            player.X += player.vX;
+            player.Y += player.vY;
         }
 
         private void pbMain_MouseClick(object sender, MouseEventArgs e)
@@ -71,7 +85,7 @@ namespace EventMod
             if (marker == null)
             {
                 marker = new Marker(0, 0, 0);
-                objects.Add(marker); // и главное не забыть пололжить в objects
+                objects.Add(marker);
             }
             marker.X = e.X; marker.Y = e.Y;
         }

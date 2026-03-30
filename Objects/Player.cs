@@ -7,6 +7,8 @@ namespace EventMod.Objects
 {
     internal class Player : BaseObject
     {
+        public Action<Marker> OnMarkerOverlap;
+        public float vX, vY;
         public Player(float x, float y, float angle) : base(x, y, angle)
         {
         }
@@ -21,6 +23,16 @@ namespace EventMod.Objects
             g.FillEllipse(new SolidBrush(Color.DeepSkyBlue), -15, -15, 30, 30);
             g.DrawEllipse(new Pen(Color.Black, 2), -15,-15, 30, 30);
             g.DrawLine(new Pen(Color.Black, 2), 0, 0, 25, 0);
+        }
+
+        public override void Overlap(BaseObject obj)
+        {
+            base.Overlap(obj);
+
+            if (obj is Marker)
+            {
+                OnMarkerOverlap(obj as Marker);
+            }
         }
     }
 }
