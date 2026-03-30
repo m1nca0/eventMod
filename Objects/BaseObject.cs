@@ -11,6 +11,7 @@ namespace EventMod.Objects
         public float Y;
         public float Angle;
 
+        public Action<BaseObject, BaseObject> OnOverlap;
         public BaseObject(float x, float y, float angle)
         {
             this.X = x;
@@ -44,6 +45,14 @@ namespace EventMod.Objects
             var region = new Region(path1);
             region.Intersect(path2);
             return !region.IsEmpty(g);
+        }
+
+        public virtual void Overlap(BaseObject obj)
+        {
+            if (this.OnOverlap != null)
+            {
+                this.OnOverlap(this, obj);
+            }
         }
     }
 }

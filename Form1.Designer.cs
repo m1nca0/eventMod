@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             pbMain = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            txtLog = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbMain).BeginInit();
             SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             pbMain.Location = new Point(12, 12);
             pbMain.Name = "pbMain";
-            pbMain.Size = new Size(776, 426);
+            pbMain.Size = new Size(569, 426);
             pbMain.TabIndex = 0;
             pbMain.TabStop = false;
             pbMain.Paint += pbMain_Paint;
@@ -50,21 +51,32 @@
             timer1.Interval = 30;
             timer1.Tick += timer1_Tick;
             // 
+            // txtLog
+            // 
+            txtLog.Location = new Point(587, 12);
+            txtLog.Multiline = true;
+            txtLog.Name = "txtLog";
+            txtLog.Size = new Size(201, 426);
+            txtLog.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtLog);
             Controls.Add(pbMain);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbMain).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pbMain;
         private System.Windows.Forms.Timer timer1;
+        private TextBox txtLog;
     }
 }

@@ -12,6 +12,12 @@ namespace EventMod
             InitializeComponent();
 
             player = new Player(pbMain.Width / 2, pbMain.Height / 2, 0);
+
+            player.OnOverlap += (p, obj) =>
+            {
+                txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
+            };
+
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
 
             objects.Add(marker);
@@ -30,6 +36,8 @@ namespace EventMod
             {
                 if (obj != player && player.Overlaps(obj, g))
                 {
+                    player.Overlap(obj); 
+                    obj.Overlap(player);
                     if (obj == marker)
                     {
                         objects.Remove(marker);
