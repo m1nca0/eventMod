@@ -8,6 +8,7 @@ namespace EventMod.Objects
     internal class Player : BaseObject
     {
         public Action<Marker> OnMarkerOverlap;
+        public Action<MyEllipse> OnEllipseOverlap;
         public float vX, vY;
         public Player(float x, float y, float angle) : base(x, y, angle)
         {
@@ -32,6 +33,9 @@ namespace EventMod.Objects
             if (obj is Marker)
             {
                 OnMarkerOverlap(obj as Marker);
+            }else if (obj is MyEllipse)
+            {
+                OnEllipseOverlap(obj as MyEllipse);
             }
         }
     }

@@ -32,6 +32,7 @@
             pbMain = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             txtLog = new TextBox();
+            txtCount = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbMain).BeginInit();
             SuspendLayout();
             // 
@@ -59,11 +60,21 @@
             txtLog.Size = new Size(201, 426);
             txtLog.TabIndex = 1;
             // 
+            // txtCount
+            // 
+            txtCount.Location = new Point(519, 12);
+            txtCount.Name = "txtCount";
+            txtCount.ReadOnly = true;
+            txtCount.Size = new Size(62, 23);
+            txtCount.TabIndex = 2;
+            txtCount.Text = "Очки: 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtCount);
             Controls.Add(txtLog);
             Controls.Add(pbMain);
             Name = "Form1";
@@ -78,5 +89,6 @@
         private PictureBox pbMain;
         private System.Windows.Forms.Timer timer1;
         private TextBox txtLog;
+        private TextBox txtCount;
     }
 }

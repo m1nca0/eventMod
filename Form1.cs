@@ -7,10 +7,10 @@ namespace EventMod
         List<BaseObject> objects = new();
         Player player;
         Marker marker;
+        int count = 0;
         public Form1()
         {
             InitializeComponent();
-
             player = new Player(pbMain.Width / 2, pbMain.Height / 2, 0);
 
             player.OnOverlap += (p, obj) =>
@@ -21,6 +21,12 @@ namespace EventMod
             {
                 objects.Remove(m);
                 marker = null;
+            };
+            player.OnEllipseOverlap += (m) =>
+            {
+                objects.Remove(m);
+                count++;
+                txtCount.Text = "Очки: " + count;
             };
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
 
@@ -54,6 +60,12 @@ namespace EventMod
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (!objects.Any(item => item is MyEllipse))
+            {
+                var rnd = new Random();
+                
+                objects.Add(new MyEllipse(rnd.Next(10,700), rnd.Next(1,350), 0));
+            }
             pbMain.Invalidate();
         }
         private void updatePlaer()
