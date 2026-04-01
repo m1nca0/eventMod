@@ -7,7 +7,8 @@ namespace EventMod.Objects
 {
     internal class MyEllipse : BaseObject
     {
-
+        public int lifeTime = 100;
+        public Action<MyEllipse> OnDeath;
         public MyEllipse(float x, float y, float angle) : base(x, y, angle)
         {
 
@@ -20,8 +21,23 @@ namespace EventMod.Objects
         }
         public override void Render(Graphics g)
         {
-            g.FillEllipse(new SolidBrush(Color.LightGreen), -25, -25, 50, 50);
-            g.DrawEllipse(new Pen(Color.Green, 2), -25, -25, 50, 50);
+            if (lifeTime > 0)
+            {
+                g.FillEllipse(new SolidBrush(Color.LightGreen), -1 * (lifeTime / 2), -1 * (lifeTime / 2), lifeTime, lifeTime);
+                lifeTime--;
+            }
+            else
+            {
+                if(OnDeath != null)
+                {
+                    OnDeath(this);
+                }
+            }
+        }
+        public void Relocation()
+        {
+            lifeTime = 100;
+            
         }
     }
 }
