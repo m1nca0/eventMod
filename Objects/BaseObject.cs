@@ -24,7 +24,7 @@ namespace EventMod.Objects
 
             return matrix;
         }
-        public virtual void Render(Graphics g)
+        public virtual void Render(Graphics g, int weight)
         {
 
         }

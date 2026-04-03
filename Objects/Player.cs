@@ -16,10 +16,11 @@ namespace EventMod.Objects
             path.AddEllipse(-15, -15, 30, 30);
             return path;
         }
-        public override void Render(Graphics g)
+        public override void Render(Graphics g, int weight)
         {
-            g.FillEllipse(new SolidBrush(Color.DeepSkyBlue), -15, -15, 30, 30);
-            g.DrawEllipse(new Pen(Color.Black, 2), -15,-15, 30, 30);
+            weight *= 2;
+            g.FillEllipse(new SolidBrush(Color.DeepSkyBlue), -1 * (weight / 2), -1 * (weight / 2), weight, weight);
+            g.DrawEllipse(new Pen(Color.Black, 2), -1 * (weight / 2), -1 * (weight / 2), weight, weight);
             g.DrawLine(new Pen(Color.Black, 2), 0, 0, 25, 0);
         }
 

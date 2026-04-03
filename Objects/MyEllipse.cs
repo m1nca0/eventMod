@@ -19,7 +19,7 @@ namespace EventMod.Objects
             path.AddEllipse(-15, -15, 30, 30);
             return path;
         }
-        public override void Render(Graphics g)
+        public override void Render(Graphics g, int weight)
         {
             if (lifeTime > 0)
             {

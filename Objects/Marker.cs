@@ -16,7 +16,7 @@ namespace EventMod.Objects
             path.AddEllipse(-3, -3, 6, 6);
             return path;
         }
-        public override void Render(Graphics g)
+        public override void Render(Graphics g, int weight)
         {
             g.FillEllipse(new SolidBrush(Color.Red), -3, -3, 6, 6);
             g.DrawEllipse(new Pen(Color.Red, 2), -6, -6, 12, 12);

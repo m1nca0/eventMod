@@ -36,30 +36,11 @@ namespace EventMod
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
             objects.Add(marker);
             objects.Add(player);
-
-            //enemy1 = new MyEllipse(50, 50, 0);
-            //objects.Add(enemy1);
-            //enemy2 = new MyEllipse(150, 150, 0);
-            //objects.Add(enemy1);
-
-            //enemy1.OnDeath += (en) =>
-            //{
-            //    OverTime();
-            //    objects.Remove(en);
-            //};
-            //enemy2.OnDeath += (en2) =>
-            //{
-            //    OverTime();
-            //    objects.Remove(en2);
-            //};
-            //objects.Add(new MyEllipse(50, 50, 0));
-            //objects.Add(new MyEllipse(150, 150, 0));
-
         }
         public void OverTime()
         {
             var rnd = new Random();
-            enemy1 = new MyEllipse(rnd.Next(10, 600), rnd.Next(1, 300), 0);
+            enemy1 = new MyEllipse(rnd.Next(30, 530), rnd.Next(30, 450), 0);
             objects.Add(enemy1);
             enemy1.OnDeath += (en) =>
             {
@@ -87,12 +68,13 @@ namespace EventMod
             foreach (var obj in objects.ToList())
             {
                 g.Transform = obj.GetTransform();
-                obj.Render(g);
+                obj.Render(g, count);
             }
             int ellipseCount = objects.OfType<MyEllipse>().Count();
-            if (ellipseCount < 5)
+            while (ellipseCount < 10)
             {
                 OverTime();
+                ellipseCount = objects.OfType<MyEllipse>().Count();
             }
         }
 
