@@ -16,6 +16,7 @@ namespace EventMod.Objects
         public override GraphicsPath GetGraphicsPath()
         {
             var path = base.GetGraphicsPath();
+            
             path.AddEllipse(-15, -15, 30, 30);
             return path;
         }

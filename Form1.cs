@@ -8,8 +8,6 @@ namespace EventMod
         Player player;
         Marker marker;
 
-        MyEllipse enemy1;
-        MyEllipse enemy2;
         int count = 0;
         public Form1()
         {
@@ -28,7 +26,7 @@ namespace EventMod
             player.OnEllipseOverlap += (m) =>
             {
                 objects.Remove(m);
-                OverTime();
+                CreateEllipse();
                 count++;
                 txtCount.Text = "Очки: " + count;
             };
@@ -37,14 +35,14 @@ namespace EventMod
             objects.Add(marker);
             objects.Add(player);
         }
-        public void OverTime()
+        public void CreateEllipse()
         {
             var rnd = new Random();
-            enemy1 = new MyEllipse(rnd.Next(30, 530), rnd.Next(30, 450), 0);
-            objects.Add(enemy1);
-            enemy1.OnDeath += (en) =>
+            var enemy = new MyEllipse(rnd.Next(30, 530), rnd.Next(30, 450), 0);
+            objects.Add(enemy);
+            enemy.OnDeath += (en) =>
             {
-                OverTime();
+                CreateEllipse();
                 objects.Remove(en);
             };
         }
@@ -54,7 +52,7 @@ namespace EventMod
 
             g.Clear(Color.White);
 
-            updatePlaer();
+            updatePlayer();
             foreach (var obj in objects.ToList())
             {
 
@@ -73,7 +71,7 @@ namespace EventMod
             int ellipseCount = objects.OfType<MyEllipse>().Count();
             while (ellipseCount < 10)
             {
-                OverTime();
+                CreateEllipse();
                 ellipseCount = objects.OfType<MyEllipse>().Count();
             }
         }
@@ -82,7 +80,7 @@ namespace EventMod
         {
             pbMain.Invalidate();
         }
-        private void updatePlaer()
+        private void updatePlayer()
         {
             if (marker != null)
             {
